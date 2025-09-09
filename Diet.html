@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3b5998;
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        #diet-plans {
+            text-align: center;
+            padding: 50px;
+        }
+        .diet-category-buttons {
+            margin: 20px 0;
+        }
+        .diet-category {
+            background-color: #3b5998;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .diet-category:hover {
+            background-color: #2d4373;
+        }
+        .diet-plan-container {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 2px solid #3b5998;
+            background-color: white;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .diet-plan-container h3 {
+            margin-top: 0;
+        }
+        footer {
+            background-color: #3b5998;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Diet Plans</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="workout.html">Workout Plans</a></li>
+            <li><a href="diet.html">Diet Plans</a></li>
+            <li><a href="progress.html">Progress</a></li>
+        </ul>
+    </nav>
+
+    <!-- Diet Plans Section -->
+    <section id="diet-plans">
+        <!-- Diet Type Buttons -->
+        <div class="diet-category-buttons">
+            <button class="diet-category" id="vegetarian">Vegetarian</button>
+            <button class="diet-category" id="non-vegetarian">Non-Vegetarian</button>
+            <button class="diet-category" id="vegan">Vegan</button>
+        </div>
+
+        <!-- Weight Loss, Weight Gain, Muscle Gain, Stay Fit Dropdown -->
+        <div class="diet-category-buttons">
+            <button class="diet-category" id="weight-loss">Weight Loss</button>
+            <button class="diet-category" id="weight-gain">Weight Gain</button>
+            <button class="diet-category" id="muscle-gain">Muscle Gain</button>
+            <button class="diet-category" id="stay-fit">Stay Fit</button>
+        </div>
+
+        <!-- Diet Plan Display -->
+        <div id="diet-info" class="diet-plan-container"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Fitness Journey</p>
+    </footer>
+
+    <!-- JavaScript to Handle Diet Plan Switching -->
+    <script>
+        let selectedDietType = ''; // Store the selected diet type
+        let selectedCategory = ''; // Store the selected category
+
+        // Handle Diet Type Button Click
+        document.getElementById('vegetarian').addEventListener('click', function() {
+            selectedDietType = 'Vegetarian';
+            displayDietPlan();
+        });
+
+        document.getElementById('non-vegetarian').addEventListener('click', function() {
+            selectedDietType = 'Non-Vegetarian';
+            displayDietPlan();
+        });
+
+        document.getElementById('vegan').addEventListener('click', function() {
+            selectedDietType = 'Vegan';
+            displayDietPlan();
+        });
+
+        // Handle Diet Category Button Click
+        document.getElementById('weight-loss').addEventListener('click', function() {
+            selectedCategory = 'Weight Loss';
+            displayDietPlan();
+        });
+
+        document.getElementById('weight-gain').addEventListener('click', function() {
+            selectedCategory = 'Weight Gain';
+            displayDietPlan();
+        });
+
+        document.getElementById('muscle-gain').addEventListener('click', function() {
+            selectedCategory = 'Muscle Gain';
+            displayDietPlan();
+        });
+
+        document.getElementById('stay-fit').addEventListener('click', function() {
+            selectedCategory = 'Stay Fit';
+            displayDietPlan();
+        });
+
+        // Function to Display Diet Plan
+        function displayDietPlan() {
+            if (!selectedDietType || !selectedCategory) {
+                document.getElementById('diet-info').innerHTML = '<p>Please select both a diet type and a category.</p>';
+                return;
+            }
+
+            let dietPlan = '';
+
+            // Define the Diet Plan for Each Category and Type
+            if (selectedDietType === 'Vegetarian') {
+                if (selectedCategory === 'Weight Loss') {
+                    dietPlan = getVegetarianWeightLossPlan();
+                } else if (selectedCategory === 'Weight Gain') {
+                    dietPlan = getVegetarianWeightGainPlan();
+                } else if (selectedCategory === 'Muscle Gain') {
+                    dietPlan = getVegetarianMuscleGainPlan();
+                } else if (selectedCategory === 'Stay Fit') {
+                    dietPlan = getVegetarianStayFitPlan();
+                }
+            } else if (selectedDietType === 'Non-Vegetarian') {
+                if (selectedCategory === 'Weight Loss') {
+                    dietPlan = getNonVegWeightLossPlan();
+                } else if (selectedCategory === 'Weight Gain') {
+                    dietPlan = getNonVegWeightGainPlan();
+                } else if (selectedCategory === 'Muscle Gain') {
+                    dietPlan = getNonVegMuscleGainPlan();
+                } else if (selectedCategory === 'Stay Fit') {
+                    dietPlan = getNonVegStayFitPlan();
+                }
+            } else if (selectedDietType === 'Vegan') {
+                if (selectedCategory === 'Weight Loss') {
+                    dietPlan = getVeganWeightLossPlan();
+                } else if (selectedCategory === 'Weight Gain') {
+                    dietPlan = getVeganWeightGainPlan();
+                } else if (selectedCategory === 'Muscle Gain') {
+                    dietPlan = getVeganMuscleGainPlan();
+                } else if (selectedCategory === 'Stay Fit') {
+                    dietPlan = getVeganStayFitPlan();
+                }
+            }
+
+            // Display the Diet Plan
+            document.getElementById('diet-info').innerHTML = `
+                <h3>${selectedCategory} - ${selectedDietType} Diet Plan</h3>
+                <p>${dietPlan}</p>
+            `;
+            document.getElementById('diet-info').style.display = 'block';
+        }
+
+        // Sample Vegetarian Diet Plans
+        function getVegetarianWeightLossPlan() {
+            return 'Day 1: Salad with Tofu <br> Day 2: Veggie Stir Fry with Tempeh <br> Day 3: Lentil Soup <br> Day 4: Quinoa Salad with Roasted Veggies <br> Day 5: Chickpea Salad <br> Day 6: Veggie Wrap <br> Day 7: Grilled Tofu with Steamed Veggies';
+        }
+
+        function getVegetarianWeightGainPlan() {
+            return 'Day 1: Avocado Toast with Scrambled Eggs <br> Day 2: Tofu and Rice <br> Day 3: Quinoa with Grilled Vegetables <br> Day 4: Peanut Butter Oatmeal <br> Day 5: Greek Yogurt with Granola <br> Day 6: Veggie Stir Fry with Cashews <br> Day 7: Veggie Burger with Sweet Potato Fries';
+        }
+
+        function getVegetarianMuscleGainPlan() {
+            return 'Day 1: Scrambled Tofu with Spinach <br> Day 2: Veggie Stir Fry with Rice <br> Day 3: Grilled Tempeh with Quinoa <br> Day 4: Tofu Tacos with Avocado <br> Day 5: Lentil Salad <br> Day 6: Chickpea and Sweet Potato Stew <br> Day 7: Vegan Protein Shake with Banana';
+        }
+
+        function getVegetarianStayFitPlan() {
+            return 'Day 1: Avocado and Eggs on Toast <br> Day 2: Veggie Smoothie <br> Day 3: Quinoa Salad with Veggies <br> Day 4: Grilled Veggies with Hummus <br> Day 5: Fruit and Nut Salad <br> Day 6: Tofu Stir Fry <br> Day 7: Grilled Veggie Wrap';
+        }
+
+        // Sample Non-Vegetarian Diet Plans
+        function getNonVegWeightLossPlan() {
+            return 'Day 1: Grilled Chicken Salad <br> Day 2: Fish with Steamed Veggies <br> Day 3: Chicken Stir Fry with Vegetables <br> Day 4: Beef and Veggie Soup <br> Day 5: Grilled Turkey Breast with Salad <br> Day 6: Baked Salmon with Broccoli <br> Day 7: Chicken Wrap';
+        }
+
+        function getNonVegWeightGainPlan() {
+            return 'Day 1: Chicken and Rice <br> Day 2: Grilled Fish with Sweet Potatoes <br> Day 3: Beef Stir Fry with Rice <br> Day 4: Turkey Sandwich with Avocado <br> Day 5: Baked Chicken with Potatoes <br> Day 6: Grilled Salmon with Veggies <br> Day 7: Chicken and Quinoa';
+        }
+
+        function getNonVegMuscleGainPlan() {
+            return 'Day 1: Scrambled Eggs with Spinach <br> Day 2: Chicken Breast with Brown Rice <br> Day 3: Grilled Salmon with Quinoa <br> Day 4: Beef Tacos with Rice <br> Day 5: Chicken and Sweet Potato <br> Day 6: Grilled Steak with Vegetables <br> Day 7: Chicken Wrap';
+        }
+
+        function getNonVegStayFitPlan() {
+            return 'Day 1: Avocado Toast with Eggs <br> Day 2: Grilled Salmon Salad <br> Day 3: Chicken Breast with Brown Rice <br> Day 4: Grilled Veggies with Chicken <br> Day 5: Turkey and Spinach Salad <br> Day 6: Tuna Salad <br> Day 7: Grilled Chicken Wrap';
+        }
+
+        // Sample Vegan Diet Plans
+        function getVeganWeightLossPlan() {
+            return 'Day 1: Salad with Tofu <br> Day 2: Vegan Stir Fry <br> Day 3: Lentil Soup <br> Day 4: Quinoa Salad <br> Day 5: Chickpea Salad <br> Day 6: Vegan Wrap <br> Day 7: Roasted Veggies with Tofu';
+        }
+
+        function getVeganWeightGainPlan() {
+            return 'Day 1: Avocado Toast with Peanut Butter <br> Day 2: Chickpea Stir Fry <br> Day 3: Vegan Protein Smoothie <br> Day 4: Lentil and Sweet Potato Stew <br> Day 5: Vegan Burritos <br> Day 6: Cashew Veggie Stir Fry <br> Day 7: Vegan Tacos with Guacamole';
+        }
+
+        function getVeganMuscleGainPlan() {
+            return 'Day 1: Scrambled Tofu with Veggies <br> Day 2: Vegan Protein Shake <br> Day 3: Lentil Salad with Chickpeas <br> Day 4: Quinoa with Roasted Veggies <br> Day 5: Tofu Stir Fry <br> Day 6: Vegan Burrito <br> Day 7: Peanut Butter Banana Smoothie';
+        }
+
+        function getVeganStayFitPlan() {
+            return 'Day 1: Avocado Toast with Tomato <br> Day 2: Vegan Smoothie <br> Day 3: Quinoa Salad with Veggies <br> Day 4: Grilled Veggies with Hummus <br> Day 5: Tofu Stir Fry <br> Day 6: Vegan Wrap <br> Day 7: Fresh Veggie Salad';
+        }
+    </script>
+</body>
+</html>

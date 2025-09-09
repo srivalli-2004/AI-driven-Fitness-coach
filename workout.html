@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Plans</title>
+    <style>
+        /* Basic Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header and Footer Styling */
+        header {
+            background-color: #3b5998;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #3b5998;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Workout Section */
+        #workout-plans {
+            text-align: center;
+            padding: 40px;
+            background-color: #f4f4f9;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        /* Floating Category Buttons */
+        .category-btn {
+            background-color: #3b5998;
+            color: white;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 50px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .category-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+        }
+
+        /* Hide workout plan sections initially */
+        .workout-plan {
+            display: none;
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .workout-plan h3 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .workout-plan ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .workout-plan ul li {
+            padding: 10px 0;
+            color: #666;
+        }
+
+        /* Level Selection Buttons */
+        .level-btn {
+            background-color: #3b5998;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        .level-btn:hover {
+            background-color: #2980b9;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Workout Plans</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Workout Plans</a></li>
+        <li><a href="#">Diet Plans</a></li>
+        <li><a href="#">Progress</a></li>
+    </ul>
+</nav>
+
+<div id="workout-plans">
+    <h2>Choose Your Workout Category</h2>
+
+    <!-- Floating Buttons for Category Selection -->
+    <button class="category-btn" onclick="showLevels('weight-loss')">Weight Loss</button>
+    <button class="category-btn" onclick="showLevels('weight-gain')">Weight Gain</button>
+    <button class="category-btn" onclick="showLevels('muscle-gain')">Muscle Gain</button>
+    <button class="category-btn" onclick="showLevels('stay-fit')">Stay Fit</button>
+
+    <!-- Category Level Buttons -->
+    <div id="level-selection" style="display: none;">
+        <button class="level-btn" onclick="showPlan('beginner')">Beginner</button>
+        <button class="level-btn" onclick="showPlan('intermediate')">Intermediate</button>
+        <button class="level-btn" onclick="showPlan('advanced')">Advanced</button>
+    </div>
+
+    <!-- Workout Plans -->
+    <!-- Weight Loss Plan for Beginner, Intermediate, Advanced -->
+    <div id="weight-loss-beginner" class="workout-plan">
+        <h3>Weight Loss - Beginner</h3>
+        <ul>
+            <li>Day 1: Cardio</li>
+            <li>Day 2: Full Body Strength</li>
+            <li>Day 3: Rest</li>
+            <li>Day 4: Cardio</li>
+            <li>Day 5: Lower Body Strength</li>
+            <li>Day 6: Rest</li>
+            <li>Day 7: Full Body Strength</li>
+        </ul>
+    </div>
+
+    <div id="weight-loss-intermediate" class="workout-plan">
+        <h3>Weight Loss - Intermediate</h3>
+        <ul>
+            <li>Day 1: HIIT</li>
+            <li>Day 2: Upper Body Strength</li>
+            <li>Day 3: Cardio</li>
+            <li>Day 4: Core Strength</li>
+            <li>Day 5: Full Body Circuit</li>
+            <li>Day 6: Rest</li>
+            <li>Day 7: Cardio + Abs</li>
+        </ul>
+    </div>
+
+    <div id="weight-loss-advanced" class="workout-plan">
+        <h3>Weight Loss - Advanced</h3>
+        <ul>
+            <li>Day 1: HIIT + Core</li>
+            <li>Day 2: Strength Training (Full Body)</li>
+            <li>Day 3: Cardio + Abs</li>
+            <li>Day 4: Leg Day</li>
+            <li>Day 5: Upper Body Strength</li>
+            <li>Day 6: Active Rest</li>
+            <li>Day 7: Cardio + Stretching</li>
+        </ul>
+    </div>
+
+    <!-- Repeat for other categories (Weight Gain, Muscle Gain, Stay Fit) -->
+
+</div>
+
+<footer>
+    <p>&copy; 2024 New-Me Fitness</p>
+</footer>
+
+<script>
+    function showLevels(category) {
+        // Hide all workout plans
+        var plans = document.querySelectorAll('.workout-plan');
+        plans.forEach(function(plan) {
+            plan.style.display = 'none';
+        });
+
+        // Show the level selection buttons
+        document.getElementById("level-selection").style.display = "block";
+    }
+
+    function showPlan(level) {
+        // Hide all workout plans
+        var plans = document.querySelectorAll('.workout-plan');
+        plans.forEach(function(plan) {
+            plan.style.display = 'none';
+        });
+
+        // Show selected plan based on category and level
+        var category = document.querySelector("button.active").textContent.toLowerCase().replace(' ', '-');
+        document.getElementById(category + "-" + level).style.display = 'block';
+    }
+
+    // Make buttons active on click
+    document.querySelectorAll(".category-btn").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            document.querySelectorAll(".category-btn").forEach(function(b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+<!-- Weight Gain Plan for Beginner, Intermediate, Advanced -->
+<div id="weight-gain-beginner" class="workout-plan">
+    <h3>Weight Gain - Beginner</h3>
+    <ul>
+        <li>Day 1: Full Body Strength (Heavy Lifting)</li>
+        <li>Day 2: Rest (Light Stretching)</li>
+        <li>Day 3: Upper Body Strength</li>
+        <li>Day 4: Lower Body Strength (Squats & Deadlifts)</li>
+        <li>Day 5: Rest (Light Activity)</li>
+        <li>Day 6: Full Body Circuit</li>
+        <li>Day 7: Upper Body Strength</li>
+    </ul>
+</div>
+
+<div id="weight-gain-intermediate" class="workout-plan">
+    <h3>Weight Gain - Intermediate</h3>
+    <ul>
+        <li>Day 1: Upper Body Strength (Push, Pull)</li>
+        <li>Day 2: Lower Body Strength (Squats, Lunges)</li>
+        <li>Day 3: Rest (Stretching, Yoga)</li>
+        <li>Day 4: Full Body Strength</li>
+        <li>Day 5: Core & Abs Strength</li>
+        <li>Day 6: Rest (Active Recovery)</li>
+        <li>Day 7: Upper Body Strength</li>
+    </ul>
+</div>
+
+<div id="weight-gain-advanced" class="workout-plan">
+    <h3>Weight Gain - Advanced</h3>
+    <ul>
+        <li>Day 1: Heavy Upper Body Strength</li>
+        <li>Day 2: Heavy Lower Body Strength (Squats, Deadlifts)</li>
+        <li>Day 3: Core & Abs + Stability Work</li>
+        <li>Day 4: Full Body Strength</li>
+        <li>Day 5: Upper Body Push & Pull</li>
+        <li>Day 6: Active Rest (Mobility, Yoga)</li>
+        <li>Day 7: Full Body Powerlifting</li>
+    </ul>
+</div>
+
+
+
+<!-- Muscle Gain Plan for Beginner, Intermediate, Advanced -->
+<div id="muscle-gain-beginner" class="workout-plan">
+    <h3>Muscle Gain - Beginner</h3>
+    <ul>
+        <li>Day 1: Upper Body Strength (Push Focus)</li>
+        <li>Day 2: Lower Body Strength (Squats, Leg Press)</li>
+        <li>Day 3: Rest (Light Stretching)</li>
+        <li>Day 4: Full Body Strength (Compound Lifts)</li>
+        <li>Day 5: Upper Body Strength (Pull Focus)</li>
+        <li>Day 6: Rest (Active Recovery)</li>
+        <li>Day 7: Core & Abs</li>
+    </ul>
+</div>
+
+<div id="muscle-gain-intermediate" class="workout-plan">
+    <h3>Muscle Gain - Intermediate</h3>
+    <ul>
+        <li>Day 1: Upper Body Strength (Push + Pull)</li>
+        <li>Day 2: Lower Body Strength (Squats, Deadlifts, Lunges)</li>
+        <li>Day 3: Rest (Stretching, Yoga)</li>
+        <li>Day 4: Full Body Strength (Compound Lifts)</li>
+        <li>Day 5: Upper Body Push Focus (Chest, Shoulders, Triceps)</li>
+        <li>Day 6: Lower Body (Leg Press, Hamstrings, Glutes)</li>
+        <li>Day 7: Active Recovery & Core</li>
+    </ul>
+</div>
+
+<div id="muscle-gain-advanced" class="workout-plan">
+    <h3>Muscle Gain - Advanced</h3>
+    <ul>
+        <li>Day 1: Upper Body Strength (Heavy Push & Pull)</li>
+        <li>Day 2: Lower Body Strength (Squats, Deadlifts, Olympic Lifts)</li>
+        <li>Day 3: Core & Abs (Advanced Work)</li>
+        <li>Day 4: Upper Body Powerlifting (Bench Press, Rows, Overhead Press)</li>
+        <li>Day 5: Lower Body Powerlifting (Deadlifts, Squats)</li>
+        <li>Day 6: Active Recovery & Stretching</li>
+        <li>Day 7: Full Body Conditioning (Metcon + Strength)</li>
+    </ul>
+</div>
+
+
+<!-- Stay Fit Plan for Beginner, Intermediate, Advanced -->
+<div id="stay-fit-beginner" class="workout-plan">
+    <h3>Stay Fit - Beginner</h3>
+    <ul>
+        <li>Day 1: Full Body Strength (Light Weight, Higher Reps)</li>
+        <li>Day 2: Active Recovery (Yoga or Stretching)</li>
+        <li>Day 3: Upper Body Strength (Pushups, Dumbbell Exercises)</li>
+        <li>Day 4: Core & Abs</li>
+        <li>Day 5: Lower Body Strength (Bodyweight Squats, Lunges)</li>
+        <li>Day 6: Cardio (Walking, Cycling, or Jogging)</li>
+        <li>Day 7: Rest (Light Stretching or Walking)</li>
+    </ul>
+</div>
+
+<div id="stay-fit-intermediate" class="workout-plan">
+    <h3>Stay Fit - Intermediate</h3>
+    <ul>
+        <li>Day 1: Full Body Strength (Compound Lifts)</li>
+        <li>Day 2: Active Recovery (Swimming or Yoga)</li>
+        <li>Day 3: Upper Body Strength (Pushups, Rows, Presses)</li>
+        <li>Day 4: Core & Abs (Planks, Leg Raises, Russian Twists)</li>
+        <li>Day 5: Lower Body Strength (Squats, Deadlifts, Lunges)</li>
+        <li>Day 6: Cardio (HIIT or Cycling)</li>
+        <li>Day 7: Rest (Yoga, Light Walking)</li>
+    </ul>
+</div>
+
+
+
+
+<div id="stay-fit-advanced" class="workout-plan">
+    <h3>Stay Fit - Advanced</h3>
+    <ul>
+        <li>Day 1: Full Body Strength (Barbell Squats, Deadlifts, Overhead Press)</li>
+        <li>Day 2: HIIT Cardio (20-30 minutes of High-Intensity Intervals)</li>
+        <li>Day 3: Upper Body Strength (Pull-ups, Bench Press, Dumbbell Rows)</li>
+        <li>Day 4: Core & Abs (Hanging Leg Raises, Ab Rollouts, Weighted Planks)</li>
+        <li>Day 5: Lower Body Strength (Bulgarian Split Squats, Step-Ups, Hip Thrusts)</li>
+        <li>Day 6: Endurance Cardio (Cycling, Swimming, or Running for 45-60 minutes)</li>
+        <li>Day 7: Active Recovery (Yoga, Stretching, or Mobility Exercises)</li>
+    </ul>
+</div>
+
+
+<div class="workout-container">
+    <!-- Yoga Section -->
+    <div class="workout-card">
+        <img src="C:\Users\sriva\OneDrive\Documents\RTP2-2\images\yoga.jpg" alt="Yoga Workout">
+        <h3>Yoga</h3>
+        <p>A calming workout to improve flexibility and reduce stress.</p>
+    </div>
+
+    <!-- Strength Section -->
+    <div class="workout-card">
+        <img src="C:\Users\sriva\OneDrive\Documents\RTP2-2\images\strength.jpg" alt="Strength Training">
+        <h3>Strength</h3>
+        <p>Build muscle and boost endurance with targeted exercises.</p>
+    </div>
+
+    <!-- Cardio Section -->
+    <div class="workout-card">
+        <img src="C:\Users\sriva\OneDrive\Documents\RTP2-2\images\cardio.gif" alt="Cardio Workout">
+        <h3>Cardio</h3>
+        <p>Burn calories and improve heart health with intense cardio.</p>
+    </div>
+</div>

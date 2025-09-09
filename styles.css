@@ -1,0 +1,656 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #3b5998;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff7e5f;
+}
+
+/* Intro Section */
+#intro {
+    background: url('fitness-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+#intro h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#intro p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#intro button {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#intro button:hover {
+    background-color: #feb47b;
+}
+
+/* Feature Cards */
+#features {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+#features h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    display: inline-block;
+    background: white;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card h4 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card button {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+    background-color: #3b5998;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Black text for specific section */
+.black-text {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #3b5998;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a.active {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+.progress-form {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.progress-form form {
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.progress-form input {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.progress-form button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #3b5998;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-form button:hover {
+    background-color: #2a4371;
+}
+
+.progress-chart {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    text-align: center;
+    background-color: #3b5998;
+    color: white;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Workout Section */
+.workout-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.workout-image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.workout-image:hover {
+    transform: scale(1.05);
+}
+
+/* Diet Section */
+.diet-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.meal-image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.meal-image:hover {
+    transform: scale(1.05);
+}
+
+/* Animated GIF Section */
+.workout-animation {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.gif-animation {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff6b6b;
+}
+
+main {
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.animated-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.animated-btn:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    height: 20px;
+}
+
+.progress {
+    height: 100%;
+    background: #0056b3;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff6b6b;
+}
+
+main {
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.animated-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.animated-btn:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Workout Section Enhancements */
+.workout-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.workout-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 300px;
+    text-align: center;
+}
+
+.workout-card:hover {
+    transform: translateY(-10px);
+}
+
+.workout-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.workout-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #0056b3;
+}
+
+.workout-card p {
+    padding: 0 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.workout-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.workout-card {
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 250px;
+}
+
+.workout-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.workout-card h3 {
+    font-size: 1.2rem;
+    color: #0056b3;
+}
+
+.workout-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.workout-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}

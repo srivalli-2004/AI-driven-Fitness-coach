@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Track Your Progress</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workout.html">Workout Plans</a></li>
+                <li><a href="diet.html">Diet Plans</a></li>
+                <li><a href="progress.html" class="active">Progress</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="progress-form">
+            <h2>Enter Your Progress</h2>
+            <form id="progress-form">
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" required>
+                <button type="submit">Add Progress</button>
+            </form>
+        </section>
+
+        <section class="progress-chart">
+            <canvas id="progressChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NEW-ME. All rights reserved.</p>
+    </footer>
+    <script src="progress.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
+
+
+
